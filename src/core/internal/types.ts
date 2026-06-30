@@ -10,10 +10,12 @@ declare const symbol: unique symbol
  * @example
  * ```ts
  * type Result = Branded<string, 'foo'>
- * //   ^? type Result = string & { [symbol]: 'foo' }
+ * //   ^? type Result = string & { [symbol]: { 'foo': true } }
  * ```
  */
-export type Branded<T, U> = T & { [symbol]: U }
+export type Branded<T, U extends PropertyKey> = T & {
+  [symbol]: { [K in U]: true }
+}
 
 /**
  * Filters out all members of `T` that are not `P`

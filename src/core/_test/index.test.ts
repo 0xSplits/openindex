@@ -5,7 +5,9 @@ test('exports', () => {
   expect(Object.keys(exports)).toMatchInlineSnapshot(`
     [
       "Errors",
-      "Foo",
+      "EventHandler",
+      "Indexer",
+      "Client",
     ]
   `)
 })

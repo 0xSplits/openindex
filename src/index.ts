@@ -33,4 +33,7 @@ export * as Errors from './core/Errors.js'
  *
  * @category Foo
  */
-export * as Foo from './core/Foo.js'
+
+export * as Client from './core/Client.js'
+export * as EventHandler from './core/EventHandler.js'
+export * as Indexer from './core/Indexer.js'
