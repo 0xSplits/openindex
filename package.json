@@ -136,5 +136,8 @@
       "path": "./src/_esm/index.js",
       "import": "{ Foo.assert }"
     }
-  ]
+  ],
+  "dependencies": {
+    "viem": "^2.54.0"
+  }
 }

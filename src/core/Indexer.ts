@@ -1,6 +1,5 @@
-import { type Abi, parseEventLogs } from 'viem'
-import type { EventHandler } from '../index.js'
-import type { Client } from './Client.js'
+import type { Abi } from 'viem'
+import { Block, type Client, type EventHandler } from '../index.js'
 import * as Errors from './Errors.js'
 
 /**
@@ -20,7 +19,7 @@ import * as Errors from './Errors.js'
  * @throws `Indexer.IndexingError` if an unexpected error occurs during indexing
  */
 export function start<ABI extends Abi>(
-  client: Client,
+  client: Client.Client,
   handlers: Array<EventHandler.Type<ABI>>,
   options: start.Options = {},
 ): void {
@@ -28,15 +27,7 @@ export function start<ABI extends Abi>(
 
   client.watchBlocks({
     emitMissed: true, // This ensures blocks that appear between polling intervals are picked up
-    onBlock: async (block) => {
-      const logs = await client.getLogs({ blockHash: block.hash })
-      await Promise.all(
-        handlers.map(async ({ abi, handler }) => {
-          const eventLogs = parseEventLogs({ logs, abi })
-          await handler(eventLogs)
-        }),
-      )
-    },
+    onBlock: async (block) => Block.index(client, block, handlers),
     onError: (error) => {
       const indexingError = new IndexingError({ client, cause: error })
       if (onError) onError(indexingError)
@@ -50,14 +41,14 @@ export declare namespace start {
     onError?: undefined | ((error: Error) => void)
   }
 
-  type ErrorType = Errors.GlobalErrorType
+  type ErrorType = IndexingError | Errors.GlobalErrorType
 }
 
 /**
  * Thrown when an unexpected error occurs during indexing.
  */
 export class IndexingError<
-  cause extends Error,
+  cause extends Error = Error,
 > extends Errors.BaseError<cause> {
   override readonly name = 'Indexer.IndexingError'
 
