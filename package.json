@@ -54,6 +54,7 @@
     "eslint-plugin-tsdoc": "^0.3.0",
     "fs-extra": "^11.2.0",
     "knip": "^5.27.2",
+    "lint-staged": "^17.0.8",
     "playwright": "^1.58.2",
     "rimraf": "^5.0.10",
     "sherif": "^0.11.0",
@@ -72,7 +73,10 @@
     "node": ">=22"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm check"
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "biome check --fix --unsafe --no-errors-on-unmatched"
   },
   "knip": {
     "ignore": [
