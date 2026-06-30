@@ -17,7 +17,7 @@ import * as Errors from './Errors.js'
  * @param handlers - Array of {@link openindex#EventHandler.Type} to index on
  * @param options - Indexing options such as error handler
  *
- * @throws `InvalidFooError` if the provided Foo is not 'foo'.
+ * @throws `Indexer.IndexingError` if an unexpected error occurs during indexing
  */
 export function start<ABI extends Abi>(
   client: Client,
@@ -37,7 +37,11 @@ export function start<ABI extends Abi>(
         }),
       )
     },
-    onError,
+    onError: (error) => {
+      const indexingError = new IndexingError({ client, cause: error })
+      if (onError) onError(indexingError)
+      else throw indexingError
+    },
   })
 }
 
@@ -55,7 +59,7 @@ export declare namespace start {
 export class IndexingError<
   cause extends Error,
 > extends Errors.BaseError<cause> {
-  override readonly name = 'Foo.InvalidFooError'
+  override readonly name = 'Indexer.IndexingError'
 
   constructor({ client, cause }: { client: Client; cause: cause }) {
     super(`Error while indexing ${client.chain.id}.`, {
