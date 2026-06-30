@@ -1,0 +1,35 @@
+{
+  "name": "openindex",
+  "description": "A typescript npm package template.",
+  "version": "0.14.29",
+  "type": "module",
+  "main": "./_cjs/index.js",
+  "module": "./_esm/index.js",
+  "types": "./_types/index.d.ts",
+  "typings": "./_types/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "*",
+    "!**/_test/**",
+    "!**/*.tsbuildinfo",
+    "!tsconfig.build.json"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "typescript": ">=5.4.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "repository": "gregfromstl/openindex",
+  "authors": [
+    "gregfromstl"
+  ],
+  "funding": [],
+  "keywords": [
+    "npm"
+  ]
+}

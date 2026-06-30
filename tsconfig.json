@@ -1,0 +1,13 @@
+{
+  // This configuration is used for local development and type checking.
+  "extends": "./tsconfig.base.json",
+  "include": ["scripts", "src", "test", "contracts/scripts/generateTypedArtifacts.ts"],
+  "exclude": ["src/_types"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~test/*": ["./test/*"],
+      "openindex": ["src/index.ts"]
+    }
+  }
+}
