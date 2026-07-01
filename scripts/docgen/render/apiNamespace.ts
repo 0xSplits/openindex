@@ -158,9 +158,9 @@ export function renderNamespaceGlossary(options: {
   const description = (() => {
     switch (type) {
       case 'Errors':
-        return 'Glossary of Errors in Ox.'
+        return 'Glossary of Errors in OpenIndex.'
       case 'Types':
-        return 'Glossary of Types in Ox.'
+        return 'Glossary of Types in OpenIndex.'
       default:
         return undefined
     }

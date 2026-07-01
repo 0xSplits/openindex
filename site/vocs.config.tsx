@@ -7,18 +7,34 @@ import { sidebar, topNav } from './config-generated'
 export default defineConfig({
   baseUrl:
     process.env.VERCEL_ENV === 'production'
-      ? 'https://google.com' // UPDATE ME
+      ? 'https://openindex.dev'
       : process.env.VERCEL_URL,
   title: 'OpenIndex',
   titleTemplate: '%s · OpenIndex',
-  description: 'A typescript npm package template.',
+  description: 'Type-safe Ethereum indexer built on viem.',
+  aiCta: {
+    query: ({ location }) =>
+      `Read the OpenIndex docs at ${location} and help me with the following:`,
+  },
   head() {
     return (
-      <script
-        src="https://cdn.usefathom.com/script.js"
-        data-site="ZMZAZRME"
-        defer
-      />
+      <>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        />
+        <script
+          src="https://cdn.usefathom.com/script.js"
+          data-site="ZMZAZRME"
+          defer
+        />
+      </>
     )
   },
   ogImageUrl: '/og-image.png',
@@ -27,8 +43,8 @@ export default defineConfig({
   markdown: {
     code: {
       themes: {
-        light: 'vitesse-light',
-        dark: 'vitesse-dark',
+        light: 'github-light',
+        dark: 'github-dark-dimmed',
       },
     },
   },
@@ -61,37 +77,17 @@ export default defineConfig({
   socials: [
     {
       icon: 'github',
-      link: 'https://github.com/gregfromstl/openindex', // UPDATE ME
-    },
-    {
-      icon: 'discord',
-      link: 'https://discord.gg/', // UPDATE ME
+      link: 'https://github.com/gregfromstl/openindex',
     },
     {
       icon: 'x',
-      link: 'https://x.com/gregfromstl', // UPDATE ME
-    },
-  ],
-  sponsors: [
-    {
-      name: 'Gold Sponsors',
-      height: 120,
-      items: [
-        [
-          // UPDATE ME
-          {
-            name: 'Example Sponsor',
-            link: 'https://google.com',
-            image: '',
-          },
-        ],
-      ],
+      link: 'https://x.com/gregfromstl',
     },
   ],
   theme: {
     accentColor: {
-      light: '#4b7b2b',
-      dark: '#bd976a',
+      light: '#303030',
+      dark: '#F7F7F7',
     },
   },
   topNav: [

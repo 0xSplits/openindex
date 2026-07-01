@@ -17,20 +17,10 @@ import { Indexer } from 'openindex'
 
 Indexer.start(client, [handler], {
   onError: (error) => {
-    if (error instanceof Indexer.IndexingError) {
-      console.error(
-        `Indexing failed on chain ${error.cause}: ${error.shortMessage}`,
-      )
-    } else {
-      console.error('Unknown error:', error)
-    }
+    console.error(error)
   },
 })
 ```
-
-:::tip
-Log the error and decide whether to restart the indexer based on the failure mode. Transient RPC errors usually resolve on their own; persistent ones warrant a restart with backoff.
-:::
 
 ## Typed Catch Blocks with `.ErrorType`
 

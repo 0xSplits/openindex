@@ -78,7 +78,7 @@ const handler = EventHandler.from([transfer], (logs) => {
 Indexer.start(client, [handler]) // [!code focus]
 ```
 
-That's it. The indexer is now watching new blocks and dispatching `Transfer` events to your handler. To stop it, you'll typically want to keep the process alive — see [Storing Events](/guides/storing-events) for production patterns.
+The indexer is now watching new blocks and dispatching `Transfer` events to your handler. Keep the process alive to keep indexing.
 
 ::::
 
