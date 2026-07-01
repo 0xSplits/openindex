@@ -1,6 +1,6 @@
 {
   "name": "openindex",
-  "description": "A typescript npm package template.",
+  "description": "Easier Indexing for Ethereum",
   "version": "0.0.1",
   "type": "module",
   "main": "./_cjs/index.js",
