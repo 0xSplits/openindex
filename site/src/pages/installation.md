@@ -30,7 +30,7 @@ bun add openindex viem
 
 ## Using Unreleased Commits
 
-If a fix or feature you need is on `main` but not yet in a release, install from the `canary` tag, which tracks the [`main`](https://github.com/gregfromstl/openindex/tree/main) branch on every push.
+If a fix or feature you need is on `main` but not yet in a release, install from the `canary` tag, which tracks the [`main`](https://github.com/0xSplits/openindex/tree/main) branch on every push.
 
 :::code-group
 ```bash [pnpm]
@@ -53,7 +53,7 @@ bun add openindex@canary
 Or clone the repo and link it locally:
 
 ```bash
-gh repo clone gregfromstl/openindex
+gh repo clone 0xSplits/openindex
 cd openindex
 pnpm install
 pnpm build

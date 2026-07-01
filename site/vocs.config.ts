@@ -53,11 +53,11 @@ export default defineConfig({
   socials: [
     {
       icon: 'github',
-      link: 'https://github.com/gregfromstl/openindex',
+      link: 'https://github.com/0xSplits/openindex',
     },
     {
       icon: 'x',
-      link: 'https://x.com/gregfromstl',
+      link: 'https://x.com/0xsplits',
     },
   ],
   topNav: [
@@ -67,11 +67,11 @@ export default defineConfig({
       items: [
         {
           text: 'Changelog',
-          link: 'https://github.com/gregfromstl/openindex/blob/main/src/CHANGELOG.md',
+          link: 'https://github.com/0xSplits/openindex/blob/main/src/CHANGELOG.md',
         },
         {
           text: 'Contributing',
-          link: 'https://github.com/gregfromstl/openindex/blob/main/.github/CONTRIBUTING.md',
+          link: 'https://github.com/0xSplits/openindex/blob/main/.github/CONTRIBUTING.md',
         },
       ],
     },

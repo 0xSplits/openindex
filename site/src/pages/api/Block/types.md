@@ -9,4 +9,4 @@ showAskAi: false
 
 The base Block type, extended from [viem Block](https://viem.sh/docs/api/classes/Block).
 
-**Source:** [src/core/Block.ts](https://github.com/gregfromstl/openindex/blob/main/src/core/Block.ts#L11)
+**Source:** [src/core/Block.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Block.ts#L11)

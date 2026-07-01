@@ -62,7 +62,7 @@ function from<ABI>(
 ): from.ReturnType<ABI>
 ```
 
-**Source:** [src/core/EventHandler.ts](https://github.com/gregfromstl/openindex/blob/main/src/core/EventHandler.ts#L78)
+**Source:** [src/core/EventHandler.ts](https://github.com/0xSplits/openindex/blob/main/src/core/EventHandler.ts#L78)
 
 ## Parameters
 

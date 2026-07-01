@@ -9,4 +9,4 @@ showAskAi: false
 
 A [viem PublicClient](https://viem.sh/docs/clients/public#public-client) with required chain.
 
-**Source:** [src/core/Client.ts](https://github.com/gregfromstl/openindex/blob/main/src/core/Client.ts#L7)
+**Source:** [src/core/Client.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Client.ts#L7)

@@ -79,7 +79,7 @@ export function createDataLookup(apiItem: model.ApiItem) {
     const sourceFilePath =
       apiItem.fileUrlPath ??
       apiItem.sourceLocation.fileUrl?.replace(
-        'https://github.com/gregfromstl/openindex/blob/main/',
+        'https://github.com/0xSplits/openindex/blob/main/',
         '',
       )
 

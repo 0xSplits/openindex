@@ -9,4 +9,4 @@ showAskAi: false
 
 Log event handler for a given contract ABI.
 
-**Source:** [src/core/EventHandler.ts](https://github.com/gregfromstl/openindex/blob/main/src/core/EventHandler.ts#L78)
+**Source:** [src/core/EventHandler.ts](https://github.com/0xSplits/openindex/blob/main/src/core/EventHandler.ts#L78)
