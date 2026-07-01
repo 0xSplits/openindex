@@ -75,6 +75,7 @@
   font-size: 0.95rem;
   text-decoration: none;
   border: 1px solid var(--vocs-color_border, rgba(0, 0, 0, 0.15));
+  background: var(--vocs-color_background2, var(--openindex-color_accentTint));
   color: inherit;
   transition:
     opacity 0.15s ease,
@@ -95,11 +96,11 @@
   border-color: var(--openindex-color_accent);
 }
 
-:root.dark .oi-btn-primary {
+:root[data-vocs-theme="dark"] .oi-btn-primary {
   color: #000;
 }
 
-:root.dark {
+:root[data-vocs-theme="dark"] {
   --openindex-color_accent: #f7f7f7;
   --openindex-color_accentHover: #ffffff;
   --openindex-color_accentTint: rgb(247 247 247 / 6%);
@@ -120,4 +121,59 @@
 
   --vocs-twoslash_tagColor: var(--openindex-color_accent);
   --vocs-twoslash_tagBackground: var(--openindex-color_accentTint);
+}
+
+.footer {
+  padding: 2rem 0;
+}
+
+.oi-built {
+  display: inline-flex;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.oi-built:hover {
+  opacity: 0.9;
+}
+
+.oi-built img {
+  height: 20px;
+  width: auto;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+
+.oi-splits-logo--dark {
+  display: none;
+}
+
+:root[data-vocs-theme="dark"] .oi-splits-logo {
+  display: none;
+}
+
+:root[data-vocs-theme="dark"] .oi-splits-logo--dark {
+  display: inline-block;
+}
+
+/* GitHub button logo (light/dark swap) */
+.oi-gh-logo--dark {
+  display: none;
+}
+
+:root[data-vocs-theme="dark"] .oi-gh-logo {
+  display: none;
+}
+
+:root[data-vocs-theme="dark"] .oi-gh-logo--dark {
+  display: inline-block;
 }

@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Getting Started
 
 ## Overview
@@ -8,7 +12,7 @@ Walk through the three steps below to index `Transfer` events on Ethereum mainne
 
 ::::steps
 
-### Set up a viem client
+### Setup a viem client
 
 OpenIndex consumes a [viem `PublicClient`](https://viem.sh/docs/clients/public#public-client). The client must have a `chain` configured — OpenIndex uses it for error reporting and chain-aware dispatch.
 

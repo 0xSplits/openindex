@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # EventHandler.from
 
 Creates a new EventHandler from an [abitype Abi](https://abitype.dev/api/types#abi).

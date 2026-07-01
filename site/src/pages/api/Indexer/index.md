@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Indexer
 
 High-level indexer that watches blocks and dispatches logs to handlers.

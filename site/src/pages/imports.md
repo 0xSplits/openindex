@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Imports & Bundle Size
 
 ## Imports

@@ -276,22 +276,22 @@ fs.writeFileSync(
 ////////////////////////////////////////////////////////////
 
 for (const namespace of namespaceEntries) {
-  let content = '# API Reference\n\n'
-
-  content += '<table className="vocs_Table">\n'
-  content += '<tbody>\n'
+  let content = '---\nshowAskAi: false\n---\n\n'
+  content += '# API Reference\n\n'
 
   for (const { category, items } of namespace.categories) {
-    content += `<tr><td className="vocs_TableCell" colSpan="2" style={{ backgroundColor: 'var(--vocs-color_background2)' }}>**${category}**</td></tr>\n`
+    content += `## ${category}\n\n`
+    content += '| Module | Description |\n'
+    content += '| --- | --- |\n'
     for (const item of items) {
       const description = item.docComment?.summary
         .split('\n\n')[0]
-        ?.replace('\n', ' ')
-      content += `<tr><td className="vocs_TableCell"><a className="vocs_Anchor vocs_Link vocs_Link_accent_underlined" href="${item.sidebarItem.link}">${item.name}</a></td><td className="vocs_TableCell">${description}</td></tr>\n`
+        ?.replace(/\n/g, ' ')
+        .replace(/\|/g, '\\|')
+      content += `| [${item.name}](${item.sidebarItem.link}) | ${description} |\n`
     }
+    content += '\n'
   }
-  content += '</tbody>\n'
-  content += '</table>\n'
 
   const path = `${pagesDir}${getPath(namespace)}`
   fs.writeFileSync(`${path}/index.mdx`, content)

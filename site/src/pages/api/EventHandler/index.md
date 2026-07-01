@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # EventHandler
 
 Constructors and types for ABI-typed event handlers.

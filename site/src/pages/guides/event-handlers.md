@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Event Handlers
 
 ## Overview

@@ -12,11 +12,6 @@ type Page =
   | { path: '/api/EventHandler/from'; render: 'static' }
   | { path: '/api/EventHandler'; render: 'static' }
   | { path: '/api/EventHandler/types'; render: 'static' }
-  | { path: '/api/Foo/assert'; render: 'static' }
-  | { path: '/api/Foo/errors'; render: 'static' }
-  | { path: '/api/Foo/from'; render: 'static' }
-  | { path: '/api/Foo'; render: 'static' }
-  | { path: '/api/Foo/types'; render: 'static' }
   | { path: '/api/Indexer/errors'; render: 'static' }
   | { path: '/api/Indexer'; render: 'static' }
   | { path: '/api/Indexer/start'; render: 'static' }

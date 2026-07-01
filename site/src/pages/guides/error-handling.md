@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Error Handling
 
 ## Overview

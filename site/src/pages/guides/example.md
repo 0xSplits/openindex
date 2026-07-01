@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Example Guide
 
 ## Overview 

@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Client
 
 The viem `PublicClient` type used throughout openindex.

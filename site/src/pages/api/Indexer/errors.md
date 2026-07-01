@@ -1,5 +1,6 @@
 ---
 showOutline: 1
+showAskAi: false
 ---
 
 # Indexer Errors

@@ -1,3 +1,7 @@
+---
+showAskAi: false
+---
+
 # Installation
 
 Install OpenIndex via your package manager.
@@ -22,10 +26,6 @@ yarn add openindex viem
 ```bash [bun]
 bun add openindex viem
 ```
-:::
-
-:::tip
-If your project already uses viem, you only need `openindex` itself — OpenIndex will pick up the version already in your lockfile.
 :::
 
 ## Using Unreleased Commits
