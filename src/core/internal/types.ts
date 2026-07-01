@@ -29,10 +29,10 @@ export type Branded<T, U extends PropertyKey> = T & {
  * @internal
  */
 export type Filter<
-  T extends readonly unknown[],
+  T extends ReadonlyArray<unknown>,
   P,
-  Acc extends readonly unknown[] = [],
-> = T extends readonly [infer F, ...infer Rest extends readonly unknown[]]
+  Acc extends ReadonlyArray<unknown> = [],
+> = T extends readonly [infer F, ...infer Rest extends ReadonlyArray<unknown>]
   ? [F] extends [P]
     ? Filter<Rest, P, [...Acc, F]>
     : Filter<Rest, P, Acc>
@@ -90,7 +90,7 @@ export type Mutable<type extends object> = {
  *
  * @internal
  */
-export type Or<T extends readonly unknown[]> = T extends readonly [
+export type Or<T extends ReadonlyArray<unknown>> = T extends readonly [
   infer Head,
   ...infer Tail,
 ]
@@ -203,7 +203,7 @@ export type Omit<type, keys extends keyof type> = Pick<
 export type PartialBy<T, K extends keyof T> = Omit<T, K> &
   ExactPartial<Pick<T, K>>
 
-export type RecursiveArray<T> = T | readonly RecursiveArray<T>[]
+export type RecursiveArray<T> = T | ReadonlyArray<RecursiveArray<T>>
 
 /**
  * Creates a type that is T with the required keys K.
@@ -231,9 +231,9 @@ export type RequiredBy<T, K extends keyof T> = Omit<T, K> &
  * @internal
  */
 export type Some<
-  array extends readonly unknown[],
+  array extends ReadonlyArray<unknown>,
   value,
-> = array extends readonly [value, ...unknown[]]
+> = array extends readonly [value, ...Array<unknown>]
   ? true
   : array extends readonly [unknown, ...infer rest]
     ? Some<rest, value>
@@ -251,7 +251,7 @@ export type Some<
  * //   ^? type Result = ['Error: Custom error message']
  * ```
  */
-export type TypeErrorMessage<messages extends string | string[]> =
+export type TypeErrorMessage<messages extends string | Array<string>> =
   messages extends string
     ? [
         // Surrounding with array to prevent `messages` from being widened to `string`

@@ -1,6 +1,5 @@
 ---
 showOutline: 1
-showAskAi: false
 ---
 
 # Indexer Errors
@@ -23,4 +22,4 @@ try {
 }
 ```
 
-**Source:** [src/core/Indexer.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Indexer.ts#L84)
+**Source:** [src/core/Indexer.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Indexer.ts#L88)

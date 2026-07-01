@@ -8,7 +8,13 @@ showAskAi: false
 
 | Module | Description |
 | --- | --- |
-| [Block](/api/Block) | Block-level indexing primitives. |
-| [Client](/api/Client) | The viem `PublicClient` type used throughout openindex. |
-| [EventHandler](/api/EventHandler) | Constructors and types for ABI-typed event handlers. |
-| [Indexer](/api/Indexer) | High-level indexer that watches blocks and dispatches logs to handlers. |
+| [Block](/api/Block) | Block-level indexing primitives. Use [`Block.index`](/api/Block/index) directly when you want to process a known block on demand — for backfilling a specific block, custom schedulers, or testing — rather than subscribing to live blocks via [`Indexer.start`](/api/Indexer/start). |
+| [Handler](/api/Handler) | Constructors and types for event handlers. Build an ABI-typed handler with [`Handler.fromAbi`](/api/Handler/fromAbi) — pairing an [abitype Abi](https://abitype.dev/api/types#abi) with a callback that receives strongly-typed logs matching the ABI — or a native transfer handler with [`Handler.native`](/api/Handler/native) to receive every value transfer (including internal transfers) in a block. |
+| [Indexer](/api/Indexer) | High-level indexer that watches blocks via a viem `PublicClient` and dispatches matching logs to your event handlers in real time. |
+
+## Traces
+
+| Module | Description |
+| --- | --- |
+| [Traces](/api/Traces) | Low-level access to a block's execution traces. [`Traces.get`](/api/Traces/get) fetches the full call tree for every transaction in a block via the node's `debug_traceBlockByHash` method (using the `callTracer`) and flattens it into a list of [`Traces.BaseTrace`](/api/Traces/types#basetrace) — one entry per call. This is the primitive that powers native transfer indexing; reach for it directly when you need custom internal-call logic beyond [`Handler.native`](/api/Handler/native). |
+

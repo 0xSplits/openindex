@@ -120,7 +120,7 @@ export declare namespace BaseError {
     /** Path of the docs. */
     docsPath?: string | undefined
     /** Meta messages to add to the error. */
-    metaMessages?: (string | undefined)[] | undefined
+    metaMessages?: Array<string | undefined> | undefined
     /** Version of the library to attribute the error to. */
     version?: string | undefined
   }

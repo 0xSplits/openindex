@@ -1,10 +1,6 @@
----
-showAskAi: false
----
-
 # Indexer.start
 
-Starts a new indexer with the provided [viem PublicClient](https://viem.sh/docs/clients/public#public-client) and [`EventHandler.Type`](/api/EventHandler/types#type) array. Watches new blocks and dispatches their logs to each handler.
+Starts a new indexer with the provided [viem PublicClient](https://viem.sh/docs/clients/public#public-client) and [`Handler.Handler`](/api/Handler/types#handler) array. Watches new blocks and dispatches their logs to each handler.
 
 ## Imports
 
@@ -20,14 +16,14 @@ import * as Indexer from 'openindex/Indexer'
 ## Examples
 
 ```ts twoslash
-import { EventHandler, Indexer } from 'openindex'
+import { Handler, Indexer } from 'openindex'
 import { createPublicClient, http, parseAbiItem } from 'viem'
 import { mainnet } from 'viem/chains'
 
 const client = createPublicClient({ chain: mainnet, transport: http() })
 
 const transfer = parseAbiItem('event Transfer(address indexed from, address indexed to, uint256 value)')
-const handler = EventHandler.from([transfer], (events) => {
+const handler = Handler.fromAbi([transfer], (events) => {
   // store events
 })
 
@@ -39,32 +35,32 @@ Indexer.start(client, [handler], {
 ## Definition
 
 ```ts
-function start<ABI>(
-  client: Client.Type,
-  handlers: Array<EventHandler.Type<ABI>>,
+function start(
+  client: Compute<PublicClient & {
+    chain: Chain;
+}>,
+  handlers: Array<Handler.Handler>,
   options?: start.Options,
 ): void
 ```
 
-**Source:** [src/core/Indexer.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Indexer.ts#L84)
+**Source:** [src/core/Indexer.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Indexer.ts#L88)
 
 ## Parameters
 
 ### client
 
-- **Type:** `Client.Type`
+- **Type:** `Compute<PublicClient & {
+    chain: Chain;
+}>`
 
 A [viem PublicClient](https://viem.sh/docs/clients/public#public-client).
 
-#### client.chain
-
-- **Type:** `Chain`
-
 ### handlers
 
-- **Type:** `Array<EventHandler.Type<ABI>>`
+- **Type:** `Array<Handler.Handler>`
 
-Array of [`EventHandler.Type`](/api/EventHandler/types#type) to dispatch logs to.
+Array of [`Handler.Handler`](/api/Handler/types#handler) to dispatch logs to.
 
 ### options
 

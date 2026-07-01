@@ -4,10 +4,11 @@ import * as exports from '../../index.js'
 test('exports', () => {
   expect(Object.keys(exports)).toMatchInlineSnapshot(`
     [
+      "Block",
       "Errors",
-      "EventHandler",
+      "Handler",
       "Indexer",
-      "Client",
+      "Traces",
     ]
   `)
 })

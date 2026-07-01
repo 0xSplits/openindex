@@ -9,7 +9,7 @@ showAskAi: false
 OpenIndex surfaces errors two ways depending on where they originate:
 
 - **Indexing errors** (RPC failures, dropped subscriptions, malformed responses) are reported through the `onError` callback on [`Indexer.start`](/api/Indexer/start). They're wrapped in an [`Indexer.IndexingError`](/api/Indexer/errors) so you know which chain and client they came from.
-- **Handler errors** — anything your event handler throws — bubble up through that same `onError` path. Catch them inside the handler if you want per-handler recovery; let them propagate if you want central handling.
+- **Handler errors** — anything your handler throws — bubble up through that same `onError` path. Catch them inside the handler if you want per-handler recovery; let them propagate if you want central handling.
 
 ## Handling Indexer Errors
 

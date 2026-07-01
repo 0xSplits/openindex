@@ -34,6 +34,7 @@ export default defineConfig({
         items: [
           { text: 'Getting Started', link: '/guides/getting-started' },
           { text: 'Event Handlers', link: '/guides/event-handlers' },
+          { text: 'Native Transfers', link: '/guides/native-transfers' },
           { text: 'Error Handling', link: '/guides/error-handling' },
         ],
       },

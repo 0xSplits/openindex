@@ -1,6 +1,6 @@
 import { createPublicClient, http, parseAbiItem } from 'viem'
 import { mainnet } from 'viem/chains'
-import { EventHandler, Indexer } from '../src/index.js'
+import { Handler, Indexer } from '../src/index.js'
 
 const client = createPublicClient({
   chain: mainnet,
@@ -12,12 +12,20 @@ const client = createPublicClient({
 const event = parseAbiItem(
   'event Transfer(address indexed from, address indexed to, uint256 value)',
 )
-const handler = EventHandler.from([event], (logs) => {
+const handler = Handler.fromAbi([event], (logs) => {
   logs.forEach((log) => {
     console.log(`Txhash: ${log.transactionHash}\nFrom: ${log.args.from}`)
   })
 })
 
-Indexer.start(client, [handler])
+const nativeHandler = Handler.native((transfers) => {
+  transfers.forEach((transfer) => {
+    console.log(
+      `Native Txhash: ${transfer.transactionHash}\nFrom: ${transfer.from}\nTo: ${transfer.to}\nValue: ${transfer.value}`,
+    )
+  })
+})
+
+Indexer.start(client, [handler, nativeHandler])
 
 await new Promise<never>(() => {})

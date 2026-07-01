@@ -34,7 +34,7 @@ import * as Indexer from 'openindex/Indexer'
 
 ## Tree Shakability & Bundle Size
 
-Each module in OpenIndex exports a number of functions (e.g. `EventHandler` exports `from`). It is important to note that these modules **are not stateful instances with methods** — you cannot instantiate an `EventHandler` class — they are collections of pure stateless functions. This is because function exports are [tree-shakable](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking), whereas instance methods are not.
+Each module in OpenIndex exports a number of functions (e.g. `Handler` exports `fromAbi`). It is important to note that these modules **are not stateful instances with methods** — you cannot instantiate a `Handler` class — they are collections of pure stateless functions. This is because function exports are [tree-shakable](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking), whereas instance methods are not.
 
 When modules are imported from OpenIndex, only the functions you actually use will be included in the final bundle of your application. Unused functions are automatically removed.
 

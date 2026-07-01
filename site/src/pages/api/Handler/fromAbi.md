@@ -1,19 +1,15 @@
----
-showAskAi: false
----
+# Handler.fromAbi
 
-# EventHandler.from
-
-Creates a new EventHandler from an [abitype Abi](https://abitype.dev/api/types#abi).
+Creates a new ABI event handler from an [abitype Abi](https://abitype.dev/api/types#abi).
 
 ## Imports
 
 :::code-group
 ```ts [Named]
-import { EventHandler } from 'openindex'
+import { Handler } from 'openindex'
 ```
 ```ts [Entrypoint]
-import * as EventHandler from 'openindex/EventHandler'
+import * as Handler from 'openindex/Handler'
 ```
 :::
 
@@ -21,34 +17,34 @@ import * as EventHandler from 'openindex/EventHandler'
 
 ### Single Event
 ```ts twoslash
-import { EventHandler } from 'openindex'
+import { Handler } from 'openindex'
 import { parseAbiItem } from 'viem'
 
 const event = parseAbiItem('event Transfer(address indexed from, address indexed to, uint256 value)')
 
-EventHandler.from([event], (events) => {
+Handler.fromAbi([event], (events) => {
   // store the events
 })
 ```
 
 ### From an Existing Contract ABI
 ```ts twoslash
-import { EventHandler } from 'openindex'
+import { Handler } from 'openindex'
 import { erc20Abi, getAbiItem } from 'viem'
 
 const event = getAbiItem({ abi: erc20Abi, name: 'Transfer' })
 
-EventHandler.from([event], (events) => {
+Handler.fromAbi([event], (events) => {
   // store the events
 })
 ```
 
 ### Full Contract ABI
 ```ts twoslash
-import { EventHandler } from 'openindex'
+import { Handler } from 'openindex'
 import { erc20Abi } from 'viem'
 
-EventHandler.from(erc20Abi, (events) => {
+Handler.fromAbi(erc20Abi, (events) => {
   // store the events
 })
 ```
@@ -56,13 +52,13 @@ EventHandler.from(erc20Abi, (events) => {
 ## Definition
 
 ```ts
-function from<ABI>(
+function fromAbi<ABI>(
   abi: ABI,
   handler: (event: Array<Log<bigint, number, boolean, undefined, false, ABI>>) => void | Promise<void>,
-): from.ReturnType<ABI>
+): fromAbi.ReturnType<ABI>
 ```
 
-**Source:** [src/core/EventHandler.ts](https://github.com/0xSplits/openindex/blob/main/src/core/EventHandler.ts#L78)
+**Source:** [src/core/Handler.ts](https://github.com/0xSplits/openindex/blob/main/src/core/Handler.ts#L155)
 
 ## Parameters
 
@@ -80,6 +76,6 @@ Log handler typed to the provided ABI.
 
 ## Return Type
 
-An [`EventHandler.Type`](/api/EventHandler/types#type) bound to the given ABI.
+A [`Handler.AbiEventHandler`](/api/Handler/types#abieventhandler) bound to the given ABI.
 
-`from.ReturnType<ABI>`
+`fromAbi.ReturnType<ABI>`

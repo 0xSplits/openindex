@@ -1,20 +1,21 @@
-import type { Abi } from 'viem'
-import { Block, type Client, type EventHandler } from '../index.js'
+import type { Chain, PublicClient } from 'viem'
+import { Block, type Handler } from '../index.js'
 import * as Errors from './Errors.js'
+import type { Compute } from './internal/types.js'
 
 /**
- * Starts a new indexer with the provided [viem PublicClient](https://viem.sh/docs/clients/public#public-client) and {@link openindex#EventHandler.Type} array. Watches new blocks and dispatches their logs to each handler.
+ * Starts a new indexer with the provided [viem PublicClient](https://viem.sh/docs/clients/public#public-client) and {@link openindex#Handler.Handler} array. Watches new blocks and dispatches their logs to each handler.
  *
  * @example
  * ```ts twoslash
- * import { EventHandler, Indexer } from 'openindex'
+ * import { Handler, Indexer } from 'openindex'
  * import { createPublicClient, http, parseAbiItem } from 'viem'
  * import { mainnet } from 'viem/chains'
  *
  * const client = createPublicClient({ chain: mainnet, transport: http() })
  *
  * const transfer = parseAbiItem('event Transfer(address indexed from, address indexed to, uint256 value)')
- * const handler = EventHandler.from([transfer], (events) => {
+ * const handler = Handler.fromAbi([transfer], (events) => {
  *   // store events
  * })
  *
@@ -24,12 +25,12 @@ import * as Errors from './Errors.js'
  * ```
  *
  * @param client - A [viem PublicClient](https://viem.sh/docs/clients/public#public-client).
- * @param handlers - Array of {@link openindex#EventHandler.Type} to dispatch logs to.
+ * @param handlers - Array of {@link openindex#Handler.Handler} to dispatch logs to.
  * @param options - Indexing options.
  */
-export function start<ABI extends Abi>(
-  client: Client.Type,
-  handlers: Array<EventHandler.Type<ABI>>,
+export function start(
+  client: Compute<PublicClient & { chain: Chain }>,
+  handlers: Array<Handler.Handler>,
   options: start.Options = {},
 ): void {
   const { onError } = options
@@ -75,7 +76,10 @@ export class IndexingError<
 > extends Errors.BaseError<cause> {
   override readonly name = 'Indexer.IndexingError'
 
-  constructor({ client, cause }: { client: Client.Type; cause: cause }) {
+  constructor({
+    client,
+    cause,
+  }: { client: Compute<PublicClient & { chain: Chain }>; cause: cause }) {
     super(`Error while indexing ${client.chain.id}.`, {
       cause,
     })
