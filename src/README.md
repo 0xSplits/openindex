@@ -2,8 +2,8 @@
 
 <p align="center">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/gregfromstl/openindex/blob/main/.github/openindex-dark.svg">
-      <img alt="OpenIndex logo" src="https://github.com/gregfromstl/openindex/blob/main/.github/openindex-light.svg" width="auto" height="200">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/0xSplits/openindex/blob/main/.github/openindex-dark.svg">
+      <img alt="OpenIndex logo" src="https://github.com/0xSplits/openindex/blob/main/.github/openindex-light.svg" width="auto" height="200">
     </picture>
 </p>
 
@@ -14,16 +14,16 @@
       <img src="https://img.shields.io/npm/v/openindex?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Version">
     </picture>
   </a>
-  <a href="https://github.com/gregfromstl/openindex/blob/main/LICENSE">
+  <a href="https://github.com/0xSplits/openindex/blob/main/LICENSE">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/l/openindex?colorA=21262d&colorB=21262d&style=flat">
       <img src="https://img.shields.io/npm/l/openindex?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="MIT License">
     </picture>
   </a>
-  <a href="https://app.codecov.io/gh/gregfromstl/openindex">
+  <a href="https://app.codecov.io/gh/0xSplits/openindex">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/codecov/c/github/gregfromstl/openindex?colorA=21262d&colorB=21262d&style=flat">
-      <img src="https://img.shields.io/codecov/c/github/gregfromstl/openindex?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Code coverage">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/codecov/c/github/0xSplits/openindex?colorA=21262d&colorB=21262d&style=flat">
+      <img src="https://img.shields.io/codecov/c/github/0xSplits/openindex?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Code coverage">
     </picture>
   </a>
 </p>
@@ -38,5 +38,5 @@ OpenIndex is a TypeScript library. <!-- TODO: describe what OpenIndex actually d
 
 ## Community
 
-- Follow [@gregfromstl](https://x.com/gregfromstl) on X for project updates
-- Join the [discussions on GitHub](https://github.com/gregfromstl/openindex/discussions)
+- Follow [@0xSplits](https://x.com/0xSplits) on X for project updates
+- Join the [discussions on GitHub](https://github.com/0xSplits/openindex/discussions)
