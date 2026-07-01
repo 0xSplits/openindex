@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "types": "../_types/core/Indexer.d.ts",
+  "main": "../_cjs/core/Indexer.js",
+  "module": "../_esm/core/Indexer.js"
+}

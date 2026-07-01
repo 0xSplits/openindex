@@ -2,7 +2,6 @@
   "name": "openindex",
   "description": "Easier Indexing for Ethereum",
   "version": "0.0.1",
-  "type": "module",
   "main": "./_cjs/index.js",
   "module": "./_esm/index.js",
   "types": "./_types/index.d.ts",
@@ -32,5 +31,43 @@
   "funding": [],
   "keywords": [
     "npm"
-  ]
+  ],
+  "exports": {
+    "./Block": {
+      "types": "./_types/core/Block.d.ts",
+      "import": "./_esm/core/Block.js",
+      "default": "./_cjs/core/Block.js"
+    },
+    "./Errors": {
+      "types": "./_types/core/Errors.d.ts",
+      "import": "./_esm/core/Errors.js",
+      "default": "./_cjs/core/Errors.js"
+    },
+    "./Handler": {
+      "types": "./_types/core/Handler.d.ts",
+      "import": "./_esm/core/Handler.js",
+      "default": "./_cjs/core/Handler.js"
+    },
+    "./Indexer": {
+      "types": "./_types/core/Indexer.d.ts",
+      "import": "./_esm/core/Indexer.js",
+      "default": "./_cjs/core/Indexer.js"
+    },
+    "./Traces": {
+      "types": "./_types/core/Traces.d.ts",
+      "import": "./_esm/core/Traces.js",
+      "default": "./_cjs/core/Traces.js"
+    },
+    "./index.docs": {
+      "types": "./_types/index.docs.d.ts",
+      "import": "./_esm/index.docs.js",
+      "default": "./_cjs/index.docs.js"
+    },
+    ".": {
+      "types": "./_types/index.d.ts",
+      "import": "./_esm/index.js",
+      "default": "./_cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  }
 }

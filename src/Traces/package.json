@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "types": "../_types/core/Traces.d.ts",
+  "main": "../_cjs/core/Traces.js",
+  "module": "../_esm/core/Traces.js"
+}

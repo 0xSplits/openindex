@@ -14,14 +14,14 @@ const event = parseAbiItem(
 )
 const handler = Handler.fromAbi([event], (logs) => {
   logs.forEach((log) => {
-    console.log(`Txhash: ${log.transactionHash}\nFrom: ${log.args.from}`)
+    console.log(`Txhash: ${log.transactionHash}\nFrom: ${log.args.from}\n---`)
   })
 })
 
 const nativeHandler = Handler.native((transfers) => {
   transfers.forEach((transfer) => {
     console.log(
-      `Native Txhash: ${transfer.transactionHash}\nFrom: ${transfer.from}\nTo: ${transfer.to}\nValue: ${transfer.value}`,
+      `Native Txhash: ${transfer.transactionHash}\nFrom: ${transfer.from}\nTo: ${transfer.to}\nValue: ${transfer.value}\n---`,
     )
   })
 })

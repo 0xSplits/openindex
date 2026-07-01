@@ -4,11 +4,11 @@
   "baseBranch": "main",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "gregfromstl/openindex" }
+    { "repo": "0xSplits/openindex" }
   ],
   "commit": false,
   "fixed": [],
-  "ignore": ["webauthn-p256"],
+  "ignore": [],
   "linked": [],
   "updateInternalDependencies": "patch"
 }

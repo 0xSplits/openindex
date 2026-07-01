@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "types": "../_types/core/Handler.d.ts",
+  "main": "../_cjs/core/Handler.js",
+  "module": "../_esm/core/Handler.js"
+}
