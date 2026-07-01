@@ -1,34 +1,36 @@
-> This is a sample OpenIndex page to get your started. Customize it with your own instructions!
-
 # Installation
 
-Install OpenIndex via your package manager, a `<script>` tag, or build from source.
+Install OpenIndex via your package manager.
 
 ## Package Manager
 
-Install the required packages.
+OpenIndex depends on [viem](https://viem.sh) as a peer dependency. Install both together.
 
 :::code-group
 ```bash [pnpm]
-pnpm install openindex
+pnpm add openindex viem
 ```
 
 ```bash [npm]
-npm install openindex
+npm install openindex viem
 ```
 
 ```bash [yarn]
-yarn add openindex
+yarn add openindex viem
 ```
 
 ```bash [bun]
-bun install openindex
+bun add openindex viem
 ```
+:::
+
+:::tip
+If your project already uses viem, you only need `openindex` itself — OpenIndex will pick up the version already in your lockfile.
 :::
 
 ## Using Unreleased Commits
 
-If you can't wait for a new release to test the latest features, you can either install from the `canary` tag (tracks the [`main`](https://github.com/gregfromstl/openindex/tree/main) branch).
+If a fix or feature you need is on `main` but not yet in a release, install from the `canary` tag, which tracks the [`main`](https://github.com/gregfromstl/openindex/tree/main) branch on every push.
 
 :::code-group
 ```bash [pnpm]
@@ -48,7 +50,7 @@ bun add openindex@canary
 ```
 :::
 
-Or clone the [package repo](https://github.com/gregfromstl/openindex) to your local machine, build, and link it yourself.
+Or clone the repo and link it locally:
 
 ```bash
 gh repo clone gregfromstl/openindex
@@ -58,13 +60,12 @@ pnpm build
 pnpm link --global
 ```
 
-Then go to the project where you are using Openindex and run `pnpm link --global openindex` (or the package manager that you used to link Openindex globally).
+Then in your project: `pnpm link --global openindex` (or your package manager's equivalent).
 
 ## Security
 
-An increased reliance on AI in recent years has caused an influx in security incidents involving Javascript packages like this one. Make sure you follow security best-practices for your project. Some quick things to get started.
+JavaScript supply-chain attacks have been on the rise. A few low-effort steps to reduce your risk:
 
-- Pin package versions, upgrade mindfully, and inspect lockfile changes to minimize the risk of [supply-chain attacks](https://nodejs.org/en/guides/security/#supply-chain-attacks).
-- Install the [Socket Security](https://socket.dev) [GitHub App](https://github.com/apps/socket-security) to help detect and block supply-chain attacks.
-- Add a [Content Security Policy](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html) to defend against external scripts running in your app.
-
+- Pin package versions, upgrade mindfully, and review lockfile diffs in PRs. See the Node.js [supply-chain attacks](https://nodejs.org/en/guides/security/#supply-chain-attacks) guide.
+- Install [Socket Security](https://socket.dev)'s [GitHub App](https://github.com/apps/socket-security) to flag risky dependency changes before merge.
+- Add a [Content Security Policy](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html) if you're shipping to a browser.

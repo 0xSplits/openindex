@@ -6,7 +6,7 @@ body:
       value: |
         Thanks for taking the time to fill out this bug report! The more info you provide, the more we can help you.
 
-        If you are a [Ox Sponsor](https://github.com/sponsors/wevm?metadata_campaign=gh_issue), your issues are prioritized.
+        If you are a [OpenIndex Sponsor](https://github.com/sponsors/gregfromstl?metadata_campaign=gh_issue), your issues are prioritized.
 
   - type: checkboxes
     attributes:
@@ -18,8 +18,8 @@ body:
 
   - type: input
     attributes:
-      label: Ox Version
-      description: What version of Ox are you using?
+      label: OpenIndex Version
+      description: What version of OpenIndex are you using?
       placeholder: x.y.z (do not write `latest`)
     validations:
       required: true

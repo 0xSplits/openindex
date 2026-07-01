@@ -4,8 +4,7 @@ import {
   type Block as viem__Block,
   type Hex as viem__Hex,
 } from 'viem'
-import type { EventHandler } from '../index.js'
-import type { Client } from './Client.js'
+import type { Client, EventHandler } from '../index.js'
 import type * as Errors from './Errors.js'
 
 /**
@@ -16,23 +15,31 @@ export type Block = viem__Block & {
 }
 
 /**
- * Starts a new indexer with the provided [viem PublicClient](https://viem.sh/docs/clients/public#public-client) and {@link openindex#Event.Event} array.
+ * Indexes a single block by fetching its logs and dispatching them to the matching {@link openindex#EventHandler.Type} handlers.
  *
  * @example
  * ```ts twoslash
- * import { Indexer } from 'openindex'
+ * import { Block, EventHandler } from 'openindex'
+ * import { createPublicClient, http, parseAbiItem } from 'viem'
+ * import { mainnet } from 'viem/chains'
  *
- * Indexer.start()
+ * const client = createPublicClient({ chain: mainnet, transport: http() })
+ * const block = await client.getBlock()
+ *
+ * const transfer = parseAbiItem('event Transfer(address indexed from, address indexed to, uint256 value)')
+ * const handler = EventHandler.from([transfer], (events) => {
+ *   // store events
+ * })
+ *
+ * await Block.index(client, block, [handler])
  * ```
  *
- * @param client - A [viem PublicClient](https://viem.sh/docs/clients/public#public-client)
- * @param handlers - Array of {@link openindex#EventHandler.Type} to index on
- * @param options - Indexing options such as error handler
- *
- * @throws `InvalidFooError` if the provided Foo is not 'foo'.
+ * @param client - A [viem PublicClient](https://viem.sh/docs/clients/public#public-client).
+ * @param block - The block to index.
+ * @param handlers - Array of {@link openindex#EventHandler.Type} to dispatch logs to.
  */
 export async function index<ABI extends Abi>(
-  client: Client,
+  client: Client.Type,
   block: Block,
   handlers: Array<EventHandler.Type<ABI>>,
 ): Promise<void> {

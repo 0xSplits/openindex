@@ -8,8 +8,9 @@ export type GlobalErrorType<name extends string = 'Error'> = Error & {
  * Base error class inherited by all errors.
  *
  * @example
- * ```ts
+ * ```ts twoslash
  * import { Errors } from 'openindex'
+ *
  * throw new Errors.BaseError('An error occurred')
  * ```
  */

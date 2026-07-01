@@ -21,11 +21,7 @@ export default defineConfig({
       />
     )
   },
-  ogImageUrl: {
-    '/': '/og-image.png', // UPDATE ME - The OG image file itself
-    '/api': 'https://og.oxlib.sh?title=%title&description=%description', // UPDATE ME
-    '/guides': 'https://og.oxlib.sh?title=%title&description=%description', // UPDATE ME
-  },
+  ogImageUrl: '/og-image.png',
   iconUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
   logoUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
   markdown: {
@@ -42,10 +38,13 @@ export default defineConfig({
       { text: 'Introduction', link: '/' },
       { text: 'Installation', link: '/installation' },
       { text: 'Imports & Bundle Size', link: '/imports' },
-      { text: 'Error Handling', link: '/error-handling' },
       {
         text: 'Guides',
-        items: [{ text: 'Example Guide', link: '/guides/example' }],
+        items: [
+          { text: 'Getting Started', link: '/guides/getting-started' },
+          { text: 'Event Handlers', link: '/guides/event-handlers' },
+          { text: 'Error Handling', link: '/guides/error-handling' },
+        ],
       },
       {
         text: 'API Reference',
