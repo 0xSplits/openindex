@@ -95,7 +95,7 @@ type NamespaceItem = {
   sidebarItem: SidebarItem
 }[]
 
-const pagesDir = './site/pages'
+const pagesDir = './site/src/pages'
 const namespaceMap: Record<
   EntrypointCategory,
   Record<NamespaceCategory, NamespaceItem>

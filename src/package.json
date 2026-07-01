@@ -14,10 +14,9 @@
     "!**/*.tsbuildinfo",
     "!tsconfig.build.json"
   ],
-  "dependencies": {
-    "viem": "^2.54.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
+    "viem": "^2.54.0",
     "typescript": ">=5.4.0"
   },
   "peerDependenciesMeta": {

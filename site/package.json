@@ -7,13 +7,22 @@
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" vocs build --searchIndex false && vocs search-index",
     "preview": "vocs preview"
   },
-  "devDependencies": {
-    "@types/react": "^19",
-    "neverthrow": "^7.0.1",
-    "openindex": "workspace:*",
+  "dependencies": {
     "react": "^19",
     "react-dom": "^19",
-    "vocs": "^1.0.13"
+    "vocs": "latest",
+    "waku": "^1.0.0-beta.3",
+    "es-module-lexer": "2.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/node": "^22",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6",
+    "typescript": "^5",
+    "neverthrow": "^7.0.1",
+    "openindex": "workspace:*",
+    "vite": "^8"
   },
   "packageManager": "pnpm@10.15.0"
 }

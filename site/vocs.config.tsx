@@ -48,12 +48,16 @@ export default defineConfig({
       },
     },
   },
-  rootDir: '.',
   sidebar: {
     '/': [
-      { text: 'Introduction', link: '/' },
-      { text: 'Installation', link: '/installation' },
-      { text: 'Imports & Bundle Size', link: '/imports' },
+      {
+        text: 'Getting Started',
+        items: [
+          { text: 'Introduction', link: '/' },
+          { text: 'Installation', link: '/installation' },
+          { text: 'Imports & Bundle Size', link: '/imports' },
+        ],
+      },
       {
         text: 'Guides',
         items: [
@@ -64,6 +68,7 @@ export default defineConfig({
       },
       {
         text: 'API Reference',
+        collapsed: true,
         items: [
           {
             text: 'Core',

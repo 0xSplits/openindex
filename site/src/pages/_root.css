@@ -32,6 +32,73 @@
   --vocs-borderRadius_8: 14px;
 }
 
+/* Landing hero */
+.oi-hero {
+  max-width: 900px;
+  padding: 6vh 0 10vh;
+}
+
+.oi-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 2rem;
+}
+
+.oi-hero p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  max-width: 640px;
+  margin: 0 0 2.5rem;
+  opacity: 0.75;
+}
+
+.oi-hero p a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.oi-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 3rem;
+}
+
+.oi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid var(--vocs-color_border, rgba(0, 0, 0, 0.15));
+  color: inherit;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.oi-btn:hover {
+  opacity: 0.85;
+}
+
+.oi-btn:active {
+  transform: translateY(1px);
+}
+
+.oi-btn-primary {
+  background: var(--openindex-color_accent);
+  color: var(--vocs-color_background, white);
+  border-color: var(--openindex-color_accent);
+}
+
+:root.dark .oi-btn-primary {
+  color: #000;
+}
+
 :root.dark {
   --openindex-color_accent: #f7f7f7;
   --openindex-color_accentHover: #ffffff;
