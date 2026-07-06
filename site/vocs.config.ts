@@ -1,6 +1,6 @@
 import { defineConfig } from 'vocs/config'
 import pkg from '../src/package.json'
-import { sidebar, topNav } from './config-generated'
+import { sidebar } from './config-generated'
 
 export default defineConfig({
   baseUrl:
@@ -41,15 +41,9 @@ export default defineConfig({
       {
         text: 'API Reference',
         collapsed: true,
-        items: [
-          {
-            text: 'Core',
-            link: '/api',
-          },
-        ],
+        items: sidebar['/api'].items,
       },
     ],
-    ...sidebar,
   },
   socials: [
     {
@@ -62,7 +56,6 @@ export default defineConfig({
     },
   ],
   topNav: [
-    ...topNav,
     {
       text: pkg.version,
       items: [
