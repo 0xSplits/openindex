@@ -21,7 +21,7 @@ jobs:
     name: Changesets
     needs: verify
     # prevents this action from running on forks
-    if: github.repository == 'gregfromstl/openindex'
+    if: github.repository == '0xSplits/openindex'
     permissions:
       contents: write # commit version/changelog updates to the release pull request
       pull-requests: write # create or update the Changesets release pull request
@@ -57,7 +57,7 @@ jobs:
     name: Release
     needs: [verify, changesets]
     # prevents this action from running on forks
-    if: github.repository == 'gregfromstl/openindex' && needs.changesets.outputs.hasChangesets == 'false'
+    if: github.repository == '0xSplits/openindex' && needs.changesets.outputs.hasChangesets == 'false'
     permissions:
       contents: write # create GitHub releases and tags after npm publish
       id-token: write # authenticate to npm via trusted publishing
@@ -87,7 +87,7 @@ jobs:
     name: Canary release
     needs: [verify, changesets]
     # prevents this action from running on forks
-    if: github.repository == 'gregfromstl/openindex' && needs.changesets.outputs.hasChangesets == 'true'
+    if: github.repository == '0xSplits/openindex' && needs.changesets.outputs.hasChangesets == 'true'
     permissions:
       contents: read # checkout repository contents
       id-token: write # authenticate to npm via trusted publishing
