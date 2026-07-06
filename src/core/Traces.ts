@@ -55,8 +55,8 @@ export async function get(
 ): Promise<get.ReturnType> {
   const traces: TraceBlockResult = await client.request({
     // A bug in viem's types prevents these params from being accepted without casting to `any`
-    method: 'debug_traceBlockByHash' as any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    params: [block.hash, { tracer: 'callTracer' }] as any, // eslint-disable-line @typescript-eslint/no-explicit-any
+    method: 'debug_traceBlockByHash' as any,
+    params: [block.hash, { tracer: 'callTracer' }] as any,
   })
 
   const flatCalls = traces.flatMap(({ result, txHash }) =>
