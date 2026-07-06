@@ -169,7 +169,7 @@ export function renderNamespaceGlossary(options: {
     '---\nshowOutline: 1\n---',
     `# ${apiItem.displayName}${description ? ` [${description}]` : ''}`,
   ]
-  const members = apiItem.members.toSorted((a, b) =>
+  const members = [...apiItem.members].sort((a, b) =>
     a.displayName > b.displayName ? 1 : -1,
   )
   for (const member of members) {

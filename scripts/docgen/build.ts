@@ -232,13 +232,11 @@ const namespaceEntries: {
 }[] = []
 
 for (const [entrypointCategory, categories] of Object.entries(namespaceMap)) {
-  let alphabetized = []
+  const alphabetized = []
   for (const [category, items] of Object.entries(categories)) {
     alphabetized.push({ category, items })
   }
-  alphabetized = alphabetized.toSorted((a, b) =>
-    a.category.localeCompare(b.category),
-  )
+  alphabetized.sort((a, b) => a.category.localeCompare(b.category))
   namespaceEntries.push({ entrypointCategory, categories: alphabetized })
 }
 
