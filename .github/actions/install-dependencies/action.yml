@@ -11,7 +11,14 @@ runs:
   using: "composite"
   steps:
     - name: Set up pnpm
-      uses: gregfromstl/actions/.github/actions/pnpm@f95dc1dadcba18fe3f02b8205e653e98e4a93516
+      uses: pnpm/action-setup@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
       with:
         node-version: 24.5
-        skip-cache: ${{ inputs.skip-cache }}
+        cache: ${{ inputs.skip-cache == 'true' && '' || 'pnpm' }}
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
