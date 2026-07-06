@@ -11,9 +11,9 @@ body:
   - type: checkboxes
     attributes:
       label: Check existing issues
-      description: By submitting this issue, you checked there isn't [already an issue](https://github.com/gregfromstl/openindex/issues) for this bug.
+      description: By submitting this issue, you checked there isn't [already an issue](https://github.com/0xSplits/openindex/issues) for this bug.
       options:
-        - label: I checked there isn't [already an issue](https://github.com/gregfromstl/openindex/issues) for the bug I encountered.
+        - label: I checked there isn't [already an issue](https://github.com/0xSplits/openindex/issues) for the bug I encountered.
           required: true
 
   - type: input
