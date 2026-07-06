@@ -2,8 +2,8 @@
 
 <p align="center">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/0xSplits/openindex/blob/main/.github/openindex-dark.svg">
-      <img alt="OpenIndex logo" src="https://github.com/0xSplits/openindex/blob/main/.github/openindex-light.svg" width="auto" height="200">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/0xSplits/openindex/main/.github/openindex-dark.svg">
+      <img alt="OpenIndex logo" src="https://raw.githubusercontent.com/0xSplits/openindex/main/.github/openindex-light.svg" width="auto" height="200">
     </picture>
 </p>
 
