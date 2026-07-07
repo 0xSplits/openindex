@@ -9,6 +9,9 @@ export default defineConfig({
       : process.env.VERCEL_URL,
   title: 'OpenIndex',
   titleTemplate: '%s · OpenIndex',
+  // Twoslash hover popups surface viem's JSDoc, which links to viem.sh-relative
+  // paths (e.g. /docs/actions/public/introduction) that don't exist on this site.
+  checkDeadlinks: 'warn',
   description: 'Type-safe Ethereum indexer built on viem.',
   ogImageUrl: '/og-image.png',
   iconUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
