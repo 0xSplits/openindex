@@ -5,7 +5,7 @@ import { sidebar } from './config-generated'
 export default defineConfig({
   baseUrl:
     process.env.VERCEL_ENV === 'production'
-      ? 'https://openindex.dev'
+      ? 'https://openindex.splits.org'
       : process.env.VERCEL_URL,
   title: 'OpenIndex',
   titleTemplate: '%s · OpenIndex',
