@@ -119,6 +119,12 @@ importers:
 
   site:
     dependencies:
+      '@takumi-rs/image-response':
+        specifier: ^0.62.8
+        version: 0.62.8
+      '@takumi-rs/wasm':
+        specifier: ^0.62.8
+        version: 0.62.8
       es-module-lexer:
         specifier: 1.7.0
         version: 1.7.0
