@@ -8,6 +8,8 @@
     "preview": "vocs preview"
   },
   "dependencies": {
+    "@takumi-rs/image-response": "^0.62.8",
+    "@takumi-rs/wasm": "^0.62.8",
     "react": "^19",
     "react-dom": "^19",
     "vocs": "latest",

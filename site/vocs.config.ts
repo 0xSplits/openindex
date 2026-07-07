@@ -12,8 +12,9 @@ export default defineConfig({
   // Twoslash hover popups surface viem's JSDoc, which links to viem.sh-relative
   // paths (e.g. /docs/actions/public/introduction) that don't exist on this site.
   checkDeadlinks: 'warn',
-  description: 'Type-safe Ethereum indexer built on viem.',
-  ogImageUrl: '/og-image.png',
+  description: 'Easier indexing for Ethereum',
+  ogImageUrl:
+    'https://openindex.splits.org/api/og?title=%title&description=%description',
   iconUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
   logoUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
   accentColor: 'light-dark(#303030, #F7F7F7)',
