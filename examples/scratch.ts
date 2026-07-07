@@ -4,9 +4,7 @@ import { Handler, Indexer } from '../src/index.js'
 
 const client = createPublicClient({
   chain: mainnet,
-  transport: http(
-    'https://lb.drpc.live/ethereum/AtXRonZmRUXdocc1cfqduME31-GPXq4R8ZlD7sA_udJz',
-  ),
+  transport: http('https://eth.llamarpc.com'),
 })
 
 const event = parseAbiItem(
