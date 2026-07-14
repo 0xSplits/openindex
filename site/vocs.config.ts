@@ -13,8 +13,7 @@ export default defineConfig({
   // paths (e.g. /docs/actions/public/introduction) that don't exist on this site.
   checkDeadlinks: 'warn',
   description: 'Easier indexing for Ethereum',
-  ogImageUrl:
-    'https://openindex.splits.org/api/og?title=%title&description=%description',
+  ogImageUrl: '/opengraph.png',
   iconUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
   logoUrl: { light: '/logo-light.png', dark: '/logo-dark.png' },
   accentColor: 'light-dark(#303030, #F7F7F7)',
